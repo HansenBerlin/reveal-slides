@@ -3,8 +3,14 @@
 <head>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  
+<script>
+$(document).ready(function(){
+  $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=8ef76e490fb742b0afd9c4ba095d9d91", function(data) {
+       console.log(data.ip_address);
+       console.log(data.country);
+   })
+});
+</script>
 <!-- Start of Survicate (www.survicate.com) code -->
 <script type='text/javascript'>
   (function(w) {
@@ -27,12 +33,7 @@
 </script>
 </head>
 <body style="height: 100%; margin: 0">
-  <script>
-    $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=8ef76e490fb742b0afd9c4ba095d9d91", function(data) {
-       console.log(data.ip_address);
-       console.log(data.country);
-   })
-  </script>
+  
   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7oCKudYyvbzYKu7FQp-CAat3d5KRVtAsDd-hI-Jzv1tdQJg/viewform?embedded=true" width="640" height="382" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
 </body>
 </html>
