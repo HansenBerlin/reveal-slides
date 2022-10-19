@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%; margin: auto; background-color: transparent; width: 1920px;"></div>
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, 'dark', {
+      renderer: 'svg',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option = {
+      backgroundColor: 'transparent',
+  legend: {
+    show: false,
+    orient: "vertical",
+    left: "left",
+    data: ["Mangelnde technische Voraussetzungen",
+"Fehlende Bandbreite",
+"Zu wenige Kapazitäten in der IT-Abteilung",
+"Bedenken bezüglich der Datensicherheit",
+"Organisatorische Probleme",
+"Erschwerte Kommunikation",
+"Mangelnde Abstimmung",
+"Fehlende Kontrollmöglichkeiten",
+"Notwendige Ungleichbehandlung wegen unterschiedlicher Homeoffice-Eignung…",
+"Mitarbeiterbezogene Probleme",
+"Erschwerte Vereinbarkeit Beruf und Familie/Kinderbetreuung",
+"Mangelnde IT-Kenntnisse der Belegschaft",
+"Mehrbelastung durch die Ausnahmesituation (Stress, Vereinsamung etc.)",
+"Mangelnde Motivation/Produktivität"]
+  },
+  
+  series: [
+    {
+      left: '10%',
+      right: '10%',
+
+    type: "pie",
+    data: [
+    {
+      value: 55,
+      name: "Mangelnde technische Voraussetzungen",
+      itemStyle: {color:'#234567'}
+    },
+    {
+value: 54,
+      name: "Erschwerte Kommunikation",
+      itemStyle: {color:'#552233'}
+    },
+    {
+value: 40,
+      name: "Fehlende Bandbreite",
+      itemStyle: {color:'#234567'}
+    },
+        {
+value: 40,
+      name: "Mangelnde Abstimmung",
+      itemStyle: {color:'#552233'}
+    },
+     {
+value: 40,
+      name: "Erschwerte Vereinbarkeit Beruf und Familie/Kinderbetreuung",
+      itemStyle: {color:'#ff2233'}
+    },
+    {
+value: 35,
+      name: "Notwendige Ungleichbehandlung wegen unterschiedlicher Homeoffice-Eignung…",
+      itemStyle: {color:'#552233'}
+    },
+    {
+value: 31,
+      name: "Fehlende Kontrollmöglichkeiten",
+      itemStyle: {color:'#552233'}
+    },
+    {
+value: 30,
+      name: "Zu wenige Kapazitäten in der IT-Abteilung",
+      itemStyle: {color:'#234567'}
+    },
+    {
+value: 30,
+      name: "Bedenken bezüglich der Datensicherheit",
+      itemStyle: {color:'#234567'}
+    },
+    {
+value: 30,
+      name: "Mehrbelastung durch die Ausnahmesituation (Stress, Vereinsamung etc.)",
+            itemStyle: {color:'#ff2233'}
+
+    },
+    {
+value: 19,
+      name: "Mangelnde Motivation/Produktivität",
+            itemStyle: {color:'#ff2233'}
+
+    },
+    {
+value: 18,
+      name: "Mangelnde IT-Kenntnisse der Belegschaft",
+            itemStyle: {color:'#ff2233'}
+
+    }
+    
+    
+    ],
+    colorBy: "series",
+    startAngle: 90,
+    minAngle: 0,
+    roseType: "area",
+    stillShowZeroSum: false,
+    itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        formatter: '{b} ({c}%)',
+        position: 'outside'
+      }
+  }
+  ]
+}
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

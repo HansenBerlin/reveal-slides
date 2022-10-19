@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>reveal.js – The HTML Presentation Framework</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/beige.css" id="theme">
+	<link rel="stylesheet" href="plugin/diagram/revealjs-diagram.css">
+	<script src="lib/echarts.js"></script>
+	<script src="lib/ecStat.js"></script>
+
+
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/beige.css" id="theme" />
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+
+
+	<style>
+		.cssClass>rect {
+			fill: #FF0000;
+			stroke: #FFFF00;
+			stroke-width: 4px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				<script type="text/template">
+						# Der Direktor und sein Team
+						\#informeller Führer
+						\#konflikt
+						\#leistungsabfall					
+					</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+						### Wie kam es dazu?
+						- Verteilung auf unterschiedliche nachgeordnete Behörden
+						- unflexible Rahmenbedingungen (kurzfristig keine andere Lösung möglich)
+						- wenig Präsenz Direktor, Aufgabe nicht erfüllt (sehr begrenzter Workload (5 Std.))
+						- lief durch informelle Führung bisher auch so, Führung durch Direktor war nicht "nötig"
+						- unterschiedliche Spezialisten, sehr unterschiedliche Zusammenarbeit (selbstständig UND gemeinsam)
+					</script>
+			</section>
+
+			
+
+			<section data-markdown>
+				<script type="text/template">
+					### Ursachen
+					- informelle Führungskraft weggefallen
+					- Wechsel in unklarer, informeller, organisch gewachsener Struktur führt zu Vakuum
+					- Kommunikation in Vorstellungsgespräch / Erwartungen
+					- Unzufriedenheit mit Chefe (zu wenig präsent)
+					- Chef hat gegenteilige Wahrnehmung				
+					</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+						## "keiner kann was dafür" <br> keine Verantwortlichen					
+					</script>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+						### kurzfristige Maßnahmen
+						- verbindliche Besprechungen, moderiert von ...?
+						- klare Gesprächsregeln, v.a. in Besprechungen
+						- Personalreferent als "Fallback", wenn was nicht klappt
+						- Gründe für Probleme (Cliquenbildung, Kündigungswünsche), ggfs. Coaching/Mediation				
+					</script>
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+						### langfristige Maßnahmen
+						- klare Verantwortung in der Gruppe selbst
+						- gffs. Chef entbinden, oder nur berichtende Funktion der Gruppe
+						- Methodentraining (Arbeitsebene/Inhalt)			
+					</script>
+			</section>
+			
+
+			
+			
+
+
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@1.0.0/plugin/mermaid/mermaid.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+	<script src="plugin/animate/plugin.js"></script>
+	<script src="plugin/animate/svg.min.js"></script>
+	<script src="plugin/chart/chart.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="plugin/diagram/revealjs-diagram.js"></script>
+	<script>includeHTML();</script>
+
+
+
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			mermaid: {
+				// flowchart: {
+				//   curve: 'linear',
+				// },
+			},
+			chart: {
+				defaults: {
+					color: 'lightgray', // color of labels
+					scale: {
+						beginAtZero: true,
+						ticks: { stepSize: 1 },
+						grid: { color: "lightgray" }, // color of grid lines
+					},
+				},
+				line: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"], "borderDash": [[5, 10], [0, 0]] },
+				bar: { backgroundColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+				pie: { backgroundColor: [["rgba(0,0,0,.8)", "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"]] },
+				radar: { borderColor: ["rgba(20,220,220,.8)", "rgba(220,120,120,.8)", "rgba(20,120,220,.8)"] },
+			},
+			animate: {
+				autoplay: true
+			},
+			plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMermaid, RevealChart, RevealAnimate],
+			dependencies: [
+				// d3.js library and plugin
+				{ src: "https://d3js.org/d3.v4.min.js" },
+				{ src: "plugin/d3js/d3js.js" },
+				{ src: 'plugin/plantuml.js', async: true }
+			]
+		});
+
+	</script>
+
+
+</body>
+
+</html>

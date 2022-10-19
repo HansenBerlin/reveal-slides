@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 300px; background-color: transparent; width: 1920px; padding-top:20%;"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+ 
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, 'dark', {
+      renderer: 'svg',
+      useDirtyRect: false,
+      width: 1920,
+      height: 300
+    });
+    var app = {};
+
+    var option = {
+		backgroundColor: 'transparent',
+
+							title: {
+								text: 'Basic Graph',
+								show: false
+							},
+							tooltip: {},
+							legend: {
+								data: ['gedacht', 'gesagt', 'gehört', 'verstanden', 'gekonnt', 'gewollt', 'gemacht', 'beibehalten'],
+								itemStyle: {
+									color: '#3d3d3d'
+								},
+								selected: {
+									'gedacht': true,
+									'gesagt': false,
+									'gehört': false,
+									'verstanden': false,
+									'gekonnt': false,
+									'gewollt': false,
+									'gemacht': false,
+									'beibehalten': false
+								}
+							},
+							backgroundColor: 'transparent',
+							animationDurationUpdate: 1500,
+							animationEasingUpdate: 'quinticInOut',
+							series: [
+								{
+									type: 'graph',
+									layout: 'none',
+									symbolSize: 80,
+									label: {
+										show: true
+									},
+									edgeSymbol: ['none', 'arrow'],
+									edgeSymbolSize: [0, 20],
+									edgeLabel: {
+										fontSize: 20
+									},
+									itemStyle: {
+										color: 'yellow',
+										//shadowBlur: 9,
+										//shadowOffsetX: 1.5,
+										//shadowOffsetY: 3,
+										//shadowColor: '#555'
+									},
+									data: [
+										{
+											name: 'gedacht',
+											x: 300,
+											y: 300,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect',
+											category: 0
+										},
+										{
+											name: 'gesagt',
+											x: 500,
+											y: 300,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect',
+											category: 1
+										},
+										{
+											name: 'gehört',
+											x: 700,
+											y: 300,
+											category: 2,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect'
+								
+										},
+										{
+											name: 'verstanden',
+											x: 900,
+											y: 300,
+											category: 3,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect',
+										},
+										{
+											name: 'gekonnt',
+											x: 1100,
+											y: 300,
+											category: 4,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect'
+										},
+										{
+											name: 'gewollt',
+											x: 1300,
+											y: 300,
+											category: 5,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect'
+										},
+										{
+											name: 'gemacht',
+											x: 1500,
+											y: 300,
+											category: 6,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect',
+										},
+										{
+											name: 'beibehalten',
+											x: 1700,
+											y: 300,
+											category: 7,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect',
+										}
+									],
+									links: [
+										{
+											source: 0,
+											target: 1,
+											label: {
+										show: true
+									},
+										},
+										{
+											source: 1,
+											target: 2
+										},
+										{
+											source: 2,
+											target: 3
+										},
+										{
+											source: 3,
+											target: 4
+										},
+										{
+											source: 4,
+											target: 5
+										},
+										{
+											source: 5,
+											target: 6
+										},
+										{
+											source: 6,
+											target: 7
+										}
+									],
+									categories: [
+										{
+											name: 'gedacht'
+										},
+										{
+											name: 'gesagt'
+										},
+										{
+											name: 'gehört'
+										},
+										{
+											name: 'verstanden'
+										},
+										{
+											name: 'gekonnt'
+										},
+										{
+											name: 'gewollt'
+										},
+										{
+											name: 'gemacht'
+										},
+										{
+											name: 'beibehalten'
+										}
+									],
+									lineStyle: {
+										opacity: 0.9,
+										width: 2,
+										curveness: 0
+									}
+								}
+							]
+						};
+    
+   
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

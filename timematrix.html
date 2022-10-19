@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 50%; margin: auto; background-color: transparent; width: 100%; padding-top:20%;"></div>
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+ 
+  <script type="text/javascript">
+    var chartDom = document.getElementById('container');
+					var myChart = echarts.init(chartDom, 'dark', {
+						renderer: 'svg',
+						useDirtyRect: false,
+						width: 1900,
+						height: 500
+          					});
+					var option;
+
+					const seriesLabel = {
+						show: true
+					};
+					option = {
+						title: {
+							show: false
+						},
+						backgroundColor: 'transparent',
+						tooltip: {
+							trigger: 'axis',
+							axisPointer: {
+								type: 'shadow'
+							}
+						},
+						legend: {
+							data: [
+								'Besprechungen vor Ort',
+								'Ortsunabhängige Gespräche',
+								'Orts- und zeitunabhängige Kommunikation'
+							]
+						},
+					
+						xAxis: {
+							type: 'value',
+							name: '%',
+							axisLabel: {
+								formatter: '{value}'
+							}
+						},
+						yAxis: {
+							type: 'category',
+							inverse: true,
+							data: ['kein HO', 'HO'],
+							axisLabel: {
+								margin: 20,
+								rich: {
+									value: {
+										lineHeight: 30,
+										align: 'center'
+									},
+									Sunny: {
+										align: 'center'
+									},
+									Cloudy: {
+										align: 'center'
+									}
+								}
+							}
+						},
+						series: [
+							{
+								name: 'Besprechungen vor Ort',
+								type: 'bar',
+								data: [86, 17],
+								label: seriesLabel
+							},
+							{
+								name: 'Ortsunabhängige Gespräche',
+								type: 'bar',
+								label: seriesLabel,
+								data: [58, 95]
+							},
+							{
+								name: 'Orts- und zeitunabhängige Kommunikation',
+								type: 'bar',
+								label: seriesLabel,
+								data: [79, 98]
+							}
+						],
+						left: '10%',
+						right: '10%'
+					};
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

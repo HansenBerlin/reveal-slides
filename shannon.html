@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 600px; background-color: transparent; margin-left:10%; width: 1600px; padding-top:20%;"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+ 
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, 'dark', {
+      renderer: 'svg',
+      useDirtyRect: false,
+      width: 1600,
+      height: 600
+    });
+    var app = {};
+
+    var option = {
+							title: {
+								text: 'Basic Graph',
+								show: false
+							},
+							tooltip: {},
+							legend: {
+								data: ['Sender', 'Encoder', 'Kanal', 'Decoder', 'Empfänger', 'Störung', 'analog', 'digital'],
+								itemStyle: {
+									color: '#3d3d3d'
+								},
+								selected: {
+									'Sender': true,
+									'Encoder': false,
+									'Kanal': false,
+									'Decoder': false,
+									'Empfänger': false,
+									'Störung': false,
+									'analog': false,
+									'digital': false
+								}
+							},
+							backgroundColor: 'transparent',
+							animationDurationUpdate: 1500,
+							animationEasingUpdate: 'quinticInOut',
+							series: [
+								{
+									type: 'graph',
+									layout: 'none',
+									symbolSize: 80,
+									label: {
+										show: true
+									},
+									edgeSymbol: ['none', 'arrow'],
+									edgeSymbolSize: [0, 20],
+									edgeLabel: {
+										fontSize: 20
+									},
+									itemStyle: {
+										color: 'yellow',
+										//shadowBlur: 9,
+										//shadowOffsetX: 1.5,
+										//shadowOffsetY: 3,
+										//shadowColor: '#555'
+									},
+									data: [
+										{
+											name: 'Sender',
+											x: 300,
+											y: 300,
+											itemStyle: {
+												color: 'blue'
+											},
+											category: 0,
+											symbol: 'roundRect'
+										},
+										{
+											name: 'Encoder',
+											x: 500,
+											y: 300,
+											category: 1
+										},
+										{
+											name: 'Kanal',
+											x: 730,
+											y: 300,
+											category: 2,
+											symbolSize: [200, 50],
+											symbol: 'rect',
+											symbolOffset: [38, 0]
+										},
+										{
+											name: 'Decoder',
+											x: 1030,
+											y: 300,
+											category: 3
+										},
+										{
+											name: 'Empfänger',
+											x: 1230,
+											y: 300,
+											category: 4,
+											itemStyle: {
+												color: 'blue'
+											},
+											symbol: 'roundRect'
+										},
+										{
+											name: 'Störung',
+											x: 730,
+											y: 390,
+											category: 5,
+											itemStyle: {
+												color: 'red'
+											},
+											symbol: 'triangle',
+											symbolSize: [130, 90],
+											symbolOffset: [42, 0]
+										},
+										{
+											name: 'sprechen',
+											x: 500,
+											y: 200,
+											category: 6,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										},
+										{
+											name: 'Luft',
+											x: 730,
+											y: 200,
+											category: 6,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										},
+										{
+											name: 'hören',
+											x: 1030,
+											y: 200,
+											category: 6,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										},
+										{
+											name: 'Proto-\nkoll ',
+											x: 500,
+											y: 200,
+											category: 7,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										},
+										{
+											name: 'Noise',
+											x: 730,
+											y: 200,
+											category: 7,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										},
+										{
+											name: 'Proto-\nkoll',
+											x: 1030,
+											y: 200,
+											category: 7,
+											itemStyle: {
+												color: 'white'
+											},
+											symbolSize: [60, 60]
+										}
+									],
+									links: [
+										{
+											source: 0,
+											target: 1
+										},
+										{
+											source: 1,
+											target: 2
+										},
+										{
+											source: 2,
+											target: 3,
+										},
+										{
+											source: 3,
+											target: 4
+										},
+										{
+											source: 6,
+											target: 1,
+											symbol: 'none'
+										},
+										{
+											source: 7,
+											target: 2,
+											symbol: 'none'
+										},
+										{
+											source: 8,
+											target: 3,
+											symbol: 'none'
+										},
+										{
+											source: 9,
+											target: 1,
+											symbol: 'none'
+										},
+										{
+											source: 10,
+											target: 2,
+											symbol: 'none'
+										},
+										{
+											source: 11,
+											target: 3,
+											symbol: 'none'
+										}
+									],
+									categories: [
+										{
+											name: 'Sender'
+										},
+										{
+											name: 'Encoder'
+										},
+										{
+											name: 'Kanal'
+										},
+										{
+											name: 'Decoder'
+										},
+										{
+											name: 'Empfänger'
+										},
+										{
+											name: 'Störung'
+										},
+										{
+											name: 'analog'
+										},
+										{
+											name: 'digital'
+										}
+									],
+									lineStyle: {
+										opacity: 0.9,
+										width: 2,
+										curveness: 0
+									}
+								}
+							]
+						};
+    
+   
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

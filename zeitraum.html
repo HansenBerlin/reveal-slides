@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 60%; margin: 0">
+  <div id="container" style="height: 60%; margin: auto; background-color: transparent; width: 1000px; padding-top:10%; margin-left:29%;"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+ 
+
+  <script type="text/javascript">
+        const mp = 1.3;
+
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, 'dark', {
+      renderer: 'svg',
+      useDirtyRect: false,
+      width: 600*mp,
+      height: 600*mp
+    });
+    var app = {};
+
+    
+    var data = {
+						"counties": [
+							"Worker 1",
+							"Worker 2",
+							"Worker 3",
+							"Worker 4"
+						],
+						"timeline": [
+							'Büro only', 'more', 'more1', 'more2'
+						],
+						"series": [
+							[
+								[1500, 1500, 100000, "Worker 1", 'Büro only', "Büro", [240*mp, 255*mp]],
+								[1500, 4500, 100000, "Worker 2", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 1500, 100000, "Worker 3", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 4500, 100000, "Worker 4", 'Büro only', "New Work", [240*mp, 255*mp]],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70]
+							],
+							[
+              [1500, 1500, 100000, "Worker 1", 'Büro only', "Büro", [240*mp, 255*mp]],
+								[1500, 4500, 100000, "Worker 2", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 1500, 100000, "Worker 3", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 4500, 100000, "Worker 4", 'Büro only', "New Work", [240*mp, 255*mp]],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[2000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[500, 4500, 100000, "Worker 2", 'Büro only', "Telefon", 70],
+								[1000, 5500, 100000, "Worker 2", 'Büro only', "Cloud", 70],
+								[2000, 5500, 100000, "Worker 2", 'Büro only', "Collab.-\ntools", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70]
+							],
+							[
+              [1500, 1500, 100000, "Worker 1", 'Büro only', "Büro", [240*mp, 255*mp]],
+								[1500, 4500, 100000, "Worker 2", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 1500, 100000, "Worker 3", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 4500, 100000, "Worker 4", 'Büro only', "New Work", [240*mp, 255*mp]],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nGespräch", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[2000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[500, 4500, 100000, "Worker 2", 'Büro only', "Telefon", 70],
+								[1000, 5500, 100000, "Worker 2", 'Büro only', "Cloud", 70],
+								[2000, 5500, 100000, "Worker 2", 'Büro only', "Collab.-\ntools", 70],
+								[5500, 1500, 100000, "Worker 3", 'Büro only', "inter-\nner Chat", 70],
+								[3500, 1500, 100000, "Worker 3", 'Büro only', "Voice\nMsg.", 70],
+								[4000, 2500, 100000, "Worker 3", 'Büro only', "File-\nServer", 70],
+								[5000, 2500, 100000, "Worker 3", 'Büro only', "Collab.-\ntools", 70],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nfeedback", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70]
+							],
+							[
+              [1500, 1500, 100000, "Worker 1", 'Büro only', "Büro", [240*mp, 255*mp]],
+								[1500, 4500, 100000, "Worker 2", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 1500, 100000, "Worker 3", 'Büro only', "Home Office", [240*mp, 255*mp]],
+								[4500, 4500, 100000, "Worker 4", 'Büro only', "New Work", [240*mp, 255*mp]],
+								[1000, 500, 100000, "Worker 1", 'Büro only', "Meeting", 70],
+								[2000, 500, 100000, "Worker 1", 'Büro only', "MA-\nGespräch", 70],
+								[2500, 1500, 100000, "Worker 1", 'Büro only', "schr.\nNachricht", 70],
+								[500, 1500, 100000, "Worker 1", 'Büro only', "mndl.\nNachricht", 70],
+								[1000, 2500, 100000, "Worker 1", 'Büro only', "Datei-\naustausch", 70],
+								[2000, 2500, 100000, "Worker 1", 'Büro only', "Zusam-\nmen-\narbeit", 70],
+								[1000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[2000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[500, 4500, 100000, "Worker 2", 'Büro only', "Telefon", 70],
+								[1000, 5500, 100000, "Worker 2", 'Büro only', "Cloud", 70],
+								[2000, 5500, 100000, "Worker 2", 'Büro only', "Collab.-\ntools", 70],
+								[5500, 1500, 100000, "Worker 3", 'Büro only', "inter-\nner Chat", 70],
+								[3500, 1500, 100000, "Worker 3", 'Büro only', "Voice\nMsg.", 70],
+								[4000, 2500, 100000, "Worker 3", 'Büro only', "File-\nServer", 70],
+								[5000, 2500, 100000, "Worker 3", 'Büro only', "Collab.-\ntools", 70],
+								[4000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[5000, 3500, 100000, "Worker 2", 'Büro only', "Video-\nkonf.", 70],
+								[5500, 4500, 100000, "Worker 3", 'Büro only', "Mail*\nChat*", 70],
+								[3500, 4500, 100000, "Worker 2", 'Büro only', "Telefon", 70],
+								[4000, 5500, 100000, "Worker 4", 'Büro only', "Cloud", 70],
+								[5000, 5500, 100000, "Worker 4", 'Büro only', "Collab.-\ntools", 70]
+							]
+						]
+					};
+
+
+						var itemStyle = {
+							opacity: 1,
+							borderWidth: 1,
+							borderStyle: 'solid',
+							borderColor: 'white'
+						};
+						
+						var option = {
+              backgroundColor: '#181818',
+							baseOption: {
+                backgroundColor: '#181818',
+
+								timeline: {
+									axisType: 'category',
+									orient: 'vertical',
+									autoPlay: false,
+									inverse: false,
+									loop: false,
+									playInterval: 1000,
+									left: null,
+									right: -50,
+									top: 20,
+									bottom: 20,
+									width: 80,
+									height: null,
+									symbol: 'none',
+									checkpointStyle: {
+										borderWidth: 1
+									},
+									controlStyle: {
+										showNextBtn: true,
+										showPrevBtn: true,
+										showPlayBtn: false
+									},
+									label: {
+										position: 'right',
+										show: false
+
+									},
+									data: []
+								},
+								xAxis: {
+									type: 'value',
+									name: 'Synchronizität',
+									max: 6000,
+									min: 0,
+									nameLocation: 'middle',
+									splitNumber: 1,
+									nameTextStyle: {
+										fontSize: 18
+									},
+									splitLine: {
+										show: false
+									},
+									axisLabel: {
+										show: false
+									},
+									axisTick: {
+										show: false
+									},
+								},
+								yAxis: {
+									type: 'value',
+									name: 'Distanz',
+									nameLocation: 'middle',
+									max: 6000,
+									splitNumber: 1,
+									nameTextStyle: {
+										fontSize: 18
+									},
+									splitLine: {
+										show: false
+									},
+									axisLabel: {
+										show: false
+									},
+									axisTick: {
+										show: false
+									},
+								},
+								visualMap: [
+									{
+										show: false,
+										dimension: 3,
+										categories: data.counties,
+										inRange: {
+											color: (function () {
+												var colors = ['#51689b', '#ce5c5c', '#fbc357', '#8fbf8f', '#659d84', '#fb8e6a', '#c77288', '#786090', '#91c4c5', '#6890ba'];
+												return colors.concat(colors);
+											})()
+										}
+									}
+								],
+								series: [
+									{
+										type: 'scatter',
+										animation: true,
+										data: data.series[0],
+										symbolSize: function (value) {
+											return value[6];
+										},
+										symbol: function (value) {
+											return getSymbolType(value[5]);
+										},
+										itemStyle: itemStyle,
+										label: {
+											position: "inside",
+											show: true,
+											formatter: '{@[5]}'
+										},
+										emphasis: {
+											disabled: true,
+											scale: false
+										}
+									}
+								],
+								animationDurationUpdate: 1000,
+								animationEasingUpdate: 'quinticInOut'
+							},
+							options: []
+						};
+						for (var n = 0; n < data.timeline.length; n++) {
+							option.baseOption.timeline.data.push(data.timeline[n]);
+							option.options.push({
+								title: {
+									show: false,
+									text: data.timeline[n] + ''
+								},
+								series: {
+									name: data.timeline[n],
+									type: 'scatter',
+									animation: true,
+									data: data.series[n],
+									symbolSize: function (value) {
+										return value[6];
+									},
+									itemStyle: itemStyle
+								}
+							});
+						}
+					
+
+					function getSymbolType(value) {
+						if (value === "Büro" || value === "Home Office" || value === "Hybrid" || value === "New Work") {
+							return 'rect';
+						}
+						else {
+							return 'circle';
+						}
+					};
+   
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
