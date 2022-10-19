@@ -8,7 +8,17 @@ $(document).ready(function(){
   $.getJSON("https://ipgeolocation.abstractapi.com/v1/?api_key=8ef76e490fb742b0afd9c4ba095d9d91", function(data) {
        console.log(data.ip_address);
        console.log(data.country);
-   })
+       console.log(data.city);
+       console.log(data.postal_code);
+       console.log(data.longitude);
+       console.log(data.latitude);
+       console.log(data.security.is_vpn);
+       console.log(data.connection.autonomous_system_number);
+       console.log(data.connection.autonomous_system_organization);
+       console.log(data.connection.connection_type);
+       console.log(data.connection.isp_name);
+       console.log(data.connection.organization_name);
+      })
 });
 </script>
 <!-- Start of Survicate (www.survicate.com) code -->
