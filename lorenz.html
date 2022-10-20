@@ -7,7 +7,7 @@
   <div id="container" style="height: 300px; background-color: transparent; width: 1920px; padding-top:20%;"></div>
 
   
-  <script type="text/javascript" src="lib/echarts.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
  
 
   <script type="text/javascript">
@@ -28,20 +28,27 @@
 								show: false
 							},
 							tooltip: {},
+							textStyle:{
+                  fontSize: '16'
+                },
 							legend: {
-								data: ['gedacht', 'gesagt', 'gehört', 'verstanden', 'gekonnt', 'gewollt', 'gemacht', 'beibehalten'],
+								data: ['ist nicht\ngedacht', 'ist nicht\ngesagt', 'ist nicht\ngehört', 'ist nicht\nverstanden', 'ist nicht\ngekonnt', 'ist nicht\ngewollt', 'ist nicht\ngemacht', 'ist nicht\nbeibehalten'],
 								itemStyle: {
-									color: '#3d3d3d'
+									color: '#4992ff'
 								},
 								selected: {
-									'gedacht': true,
-									'gesagt': false,
-									'gehört': false,
-									'verstanden': false,
-									'gekonnt': false,
-									'gewollt': false,
-									'gemacht': false,
-									'beibehalten': false
+									'ist nicht\ngedacht': true,
+									'ist nicht\ngesagt': false,
+									'ist nicht\ngehört': false,
+									'ist nicht\nverstanden': false,
+									'ist nicht\ngekonnt': false,
+									'ist nicht\ngewollt': false,
+									'ist nicht\ngemacht': false,
+									'ist nicht\nbeibehalten': false
+								},
+								textStyle:{
+									fontSize: 1,
+									fontColor: 'transparent'
 								}
 							},
 							backgroundColor: 'transparent',
@@ -51,7 +58,7 @@
 								{
 									type: 'graph',
 									layout: 'none',
-									symbolSize: 80,
+									symbolSize: 140,
 									label: {
 										show: true
 									},
@@ -60,92 +67,97 @@
 									edgeLabel: {
 										fontSize: 20
 									},
+									textStyle:{
+                      fontSize: '14'
+                    },
 									itemStyle: {
-										color: 'yellow',
+										color: '#4992ff',
 										//shadowBlur: 9,
 										//shadowOffsetX: 1.5,
 										//shadowOffsetY: 3,
 										//shadowColor: '#555'
+
 									},
 									data: [
 										{
-											name: 'gedacht',
+											name: 'ist nicht\ngedacht',
 											x: 300,
 											y: 300,
 											itemStyle: {
-												color: 'blue'
+												color: '#4992ff'
 											},
 											symbol: 'roundRect',
 											category: 0
+									
 										},
 										{
-											name: 'gesagt',
+											name: 'ist nicht\ngesagt',
 											x: 500,
 											y: 300,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											symbol: 'roundRect',
 											category: 1
 										},
 										{
-											name: 'gehört',
+											name: 'ist nicht\ngehört',
 											x: 700,
 											y: 300,
 											category: 2,
 											itemStyle: {
-												color: 'blue'
+												color: '#4992ff'
 											},
 											symbol: 'roundRect'
 								
 										},
 										{
-											name: 'verstanden',
+											name: 'ist nicht\nverstanden',
 											x: 900,
 											y: 300,
 											category: 3,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											symbol: 'roundRect',
 										},
 										{
-											name: 'gekonnt',
+											name: 'ist nicht\ngekonnt',
 											x: 1100,
 											y: 300,
 											category: 4,
 											itemStyle: {
-												color: 'blue'
+												color: '#4992ff'
 											},
 											symbol: 'roundRect'
 										},
 										{
-											name: 'gewollt',
+											name: 'ist nicht\ngewollt',
 											x: 1300,
 											y: 300,
 											category: 5,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											symbol: 'roundRect'
 										},
 										{
-											name: 'gemacht',
+											name: 'ist nicht\ngemacht',
 											x: 1500,
 											y: 300,
 											category: 6,
 											itemStyle: {
-												color: 'blue'
+												color: '#4992ff'
 											},
 											symbol: 'roundRect',
 										},
 										{
-											name: 'beibehalten',
+											name: 'ist nicht\nbeibehalten',
 											x: 1700,
 											y: 300,
 											category: 7,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											symbol: 'roundRect',
 										}
@@ -153,10 +165,7 @@
 									links: [
 										{
 											source: 0,
-											target: 1,
-											label: {
-										show: true
-									},
+											target: 1										
 										},
 										{
 											source: 1,
@@ -185,28 +194,28 @@
 									],
 									categories: [
 										{
-											name: 'gedacht'
+											name: 'ist nicht\ngedacht'											
 										},
 										{
-											name: 'gesagt'
+											name: 'ist nicht\ngesagt'
 										},
 										{
-											name: 'gehört'
+											name: 'ist nicht\ngehört'
 										},
 										{
-											name: 'verstanden'
+											name: 'ist nicht\nverstanden'
 										},
 										{
-											name: 'gekonnt'
+											name: 'ist nicht\ngekonnt'
 										},
 										{
-											name: 'gewollt'
+											name: 'ist nicht\ngewollt'
 										},
 										{
-											name: 'gemacht'
+											name: 'ist nicht\ngemacht'
 										},
 										{
-											name: 'beibehalten'
+											name: 'ist nicht\nbeibehalten'
 										}
 									],
 									lineStyle: {

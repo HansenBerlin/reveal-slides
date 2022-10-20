@@ -29,8 +29,11 @@
 							legend: {
 								data: ['Sender', 'Encoder', 'Kanal', 'Decoder', 'Empfänger', 'Störung', 'analog', 'digital'],
 								itemStyle: {
-									color: '#3d3d3d'
+									color: '#4992ff'
 								},
+                textStyle:{
+                  fontSize: '16'
+                },
 								selected: {
 									'Sender': true,
 									'Encoder': false,
@@ -51,7 +54,10 @@
 									layout: 'none',
 									symbolSize: 80,
 									label: {
-										show: true
+										show: true,
+                    textStyle:{
+                      fontSize: '14'
+                    }
 									},
 									edgeSymbol: ['none', 'arrow'],
 									edgeSymbolSize: [0, 20],
@@ -71,7 +77,7 @@
 											x: 300,
 											y: 300,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											category: 0,
 											symbol: 'roundRect'
@@ -80,7 +86,10 @@
 											name: 'Encoder',
 											x: 500,
 											y: 300,
-											category: 1
+											category: 1,
+                      itemStyle: {
+												color: '#4992ff'
+											},
 										},
 										{
 											name: 'Kanal',
@@ -89,13 +98,19 @@
 											category: 2,
 											symbolSize: [200, 50],
 											symbol: 'rect',
-											symbolOffset: [38, 0]
+											symbolOffset: [38, 0],
+                      itemStyle: {
+												color: '#fddd60'
+											},
 										},
 										{
 											name: 'Decoder',
 											x: 1030,
 											y: 300,
-											category: 3
+											category: 3,
+                      itemStyle: {
+												color: '#4992ff'
+											},
 										},
 										{
 											name: 'Empfänger',
@@ -103,7 +118,7 @@
 											y: 300,
 											category: 4,
 											itemStyle: {
-												color: 'blue'
+												color: '#7cffb2'
 											},
 											symbol: 'roundRect'
 										},
@@ -113,14 +128,14 @@
 											y: 390,
 											category: 5,
 											itemStyle: {
-												color: 'red'
+												color: '#ff6e76'
 											},
 											symbol: 'triangle',
 											symbolSize: [130, 90],
 											symbolOffset: [42, 0]
 										},
 										{
-											name: 'sprechen',
+											name: 'sprech-\nen',
 											x: 500,
 											y: 200,
 											category: 6,

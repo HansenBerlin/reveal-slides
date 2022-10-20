@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-  <div id="container" style="height: 50%; margin: auto; background-color: transparent; width: 100%; padding-top:25%;"></div>
+  <div id="container" style="height: 50%; margin: auto; background-color: transparent; width: 100%; padding-top:20%;"></div>
   
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
  
@@ -16,6 +16,12 @@
 						width: 1900,
 						height: 500
           					});
+					var data = ['Beschleunigung digitale Transformation',
+								'Arbeitsleistung gleich hoch oder besser im HO',
+								'Etablierung digitaler Kommunikationstools',
+								'Auflösung des Büroalltags',
+								'Wandel Führungskultur von Kontrolle zu Vertrauen',
+								'Nachhaltigkeit hält an (weniger Dienstreisen)'];
 
 					const seriesLabel = {
 						show: true
@@ -32,11 +38,7 @@
 							}
 						},
 						legend: {
-							data: [
-								'Besprechungen vor Ort',
-								'Ortsunabhängige Gespräche',
-								'Orts- und zeitunabhängige Kommunikation'
-							],
+							data: data,
 							textStyle: {
 								fontSize: '14'
 							}
@@ -52,7 +54,7 @@
 						yAxis: {
 							type: 'category',
 							inverse: true,
-							data: ['kein HO', 'HO'],
+							data: ['Zustimmung'],
 							axisLabel: {
 								margin: 20,
 								rich: {
@@ -62,31 +64,46 @@
 									},
 									Sunny: {
 										align: 'center'
-									},
-									Cloudy: {
-										align: 'center'
 									}
 								}
 							}
 						},
 						series: [
 							{
-								name: 'Besprechungen vor Ort',
+								name: data[0],
 								type: 'bar',
-								data: [86, 17],
+								data: [92],
 								label: seriesLabel
 							},
 							{
-								name: 'Ortsunabhängige Gespräche',
+								name: data[1],
 								type: 'bar',
 								label: seriesLabel,
-								data: [58, 95]
+								data: [87]
 							},
 							{
-								name: 'Orts- und zeitunabhängige Kommunikation',
+								name: data[2],
 								type: 'bar',
 								label: seriesLabel,
-								data: [79, 98]
+								data: [85]
+							},
+							{
+								name: data[3],
+								type: 'bar',
+								label: seriesLabel,
+								data: [67]
+							},
+							{
+								name: data[4],
+								type: 'bar',
+								label: seriesLabel,
+								data: [44]
+							},
+							{
+								name: data[5],
+								type: 'bar',
+								label: seriesLabel,
+								data: [17]
 							}
 						],
 						left: '10%',
